@@ -1,20 +1,22 @@
 import React, {Component} from 'react';
 
-// const SearchBar = () => {
-//   return <input/>
-// };
-
 class SearchBar extends Component {
-  render() {
-    // return <input onChange={this.onInputChange} />;
 
-    // Error function can be write lie this
-    return <input onChange= {(event) => console.log(event.target.value)} />
+  constructor(prop){
+    super(prop);
+
+    this.state = {
+      term: ''
+    };
   }
-
-  // onInputChange(event){
-  //   console.log(event.target.value);
-  // }
+  render() {
+    return (
+      <div>
+        <input onChange= {(event) => this.setState({term:event.target.value})} />
+        // <p>Value is: {this.state.term} </p>
+      </div>
+    )
+  }
 }
 
 export default SearchBar;
