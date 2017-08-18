@@ -1,21 +1,24 @@
-// 1. create a component > will produce the HTML
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Header from './components/header';
 import SearchBar from './components/search_bar';
+import Header from './components/table';
 
-const API_KEY = 'AIzaSyCrjMfKtfXEboGKZkStAqs-rNQxqRCe6pI';
+const API_KEY = "AIzaSyCrjMfKtfXEboGKZkStAqs-rNQxqRCe6pI";
 
-// const App = () => {
-//   return <h1>Hey!!</h1>;
-// }
-
-const App = () => {
-  return (
-    <div>
-      <SearchBar/>
-    </div>
-  )
+// Create a component and thst should produce some HTML
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <SearchBar />
+        <Table />
+      </div>
+    )
+  }
 }
 
-// 2. Take this component generated HTML and put it on the page(IN DOM)
-ReactDOM.render(<App></App>, document.querySelector('.container'));
+
+//take this components HTML  and put it on the page (in the DOM)
+ReactDOM.render(<App />, document.querySelector('.container'));
